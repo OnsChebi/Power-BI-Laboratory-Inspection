@@ -1,0 +1,69 @@
+table 'Inspector Dim'
+	lineageTag: 54ab1d7c-ce14-43cd-b482-5c5769920e11
+
+	column Department
+		dataType: string
+		lineageTag: 350a9227-9892-4b29-8670-e45f16444b7a
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Inspector ID'
+		dataType: string
+		lineageTag: 4b0c3c40-b952-432e-ab74-d09f0967445a
+		summarizeBy: none
+		sourceColumn: Inspector ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Client ID'
+		dataType: string
+		lineageTag: 86241dc6-f5b9-49a1-a862-3785518c5f05
+		summarizeBy: none
+		sourceColumn: Client ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Certification Level'
+		dataType: string
+		lineageTag: 35779c8e-2900-4da4-a46c-5796b4bb18c6
+		summarizeBy: none
+		sourceColumn: Certification Level
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Inspector Name'
+		dataType: string
+		lineageTag: 6cde639d-1eab-4494-aff8-c07cd88ebf1c
+		summarizeBy: none
+		sourceColumn: Inspector Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Inspector Dim' = m
+		mode: import
+		source =
+				let
+				    Source = Inspections,
+				    #"Removed Columns" = Table.RemoveColumns(Source,{"Laboratory Name", "City", "State", "Zip", "Country/Area", "Inspection ID", "Completion Date", "Compliance Status", "Test Category", "Scheduled Date", " Inspection Duration", "On Time", "Priority Level"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Columns"),
+				    #"Sorted Rows" = Table.Sort(#"Removed Duplicates",{{"Inspector ID", Order.Ascending}}),
+				    #"Added Custom" = Table.AddColumn(#"Sorted Rows", "Inspector Name", each "Inspector"&[Inspector ID]),
+				    #"Added Conditional Column" = Table.AddColumn(#"Added Custom", "Certification Level", each if [Inspector ID] = "001" then "Level 1" else if [Inspector ID] = "013" then "Level 1" else if [Inspector ID] = "007" then "Level 1" else if [Inspector ID] = "012" then "Level 2" else if [Inspector ID] = "014" then "Level 2" else if [Inspector ID] = "005" then "Level 1" else if [Inspector ID] = "009" then "Level 2" else if [Inspector ID] = "008" then "Level 2" else "Level 3"),
+				    #"Sorted Rows1" = Table.Sort(#"Added Conditional Column",{{"Department", Order.Ascending}}),
+				    #"Merged Queries" = Table.NestedJoin(#"Sorted Rows1", {"Inspector ID"}, Table, {"Inspector ID"}, "Table", JoinKind.LeftOuter),
+				    #"Expanded Table" = Table.ExpandTableColumn(#"Merged Queries", "Table", {"Inspector Name"}, {"Table.Inspector Name"}),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Expanded Table",{"Inspector Name"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns1",{{"Table.Inspector Name", "Inspector Name"}}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Renamed Columns", "Inspector Name", "Inspector Name - Copy"),
+				    #"Removed Columns2" = Table.RemoveColumns(#"Duplicated Column",{"Inspector Name"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Removed Columns2",{{"Inspector Name - Copy", "Inspector Name"}}),
+				    #"Removed Duplicates1" = Table.Distinct(#"Renamed Columns1", {"Department", "Inspector ID"})
+				in
+				    #"Removed Duplicates1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

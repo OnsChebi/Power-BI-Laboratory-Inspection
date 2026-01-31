@@ -1,0 +1,48 @@
+table 'Client Dim'
+	lineageTag: 09a00835-511c-41c7-8b31-5fc64e024159
+
+	column 'Client ID'
+		dataType: string
+		lineageTag: b0acf4a7-7e36-4b98-87a3-9d83b6233f94
+		summarizeBy: none
+		sourceColumn: Client ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Client_Name
+		dataType: string
+		lineageTag: 0164720f-034f-4096-be2c-23b3a1350ffc
+		summarizeBy: none
+		sourceColumn: Client_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Industry
+		dataType: string
+		lineageTag: 5f9ae52d-e403-4282-9ce1-9ef920cff3d0
+		summarizeBy: none
+		sourceColumn: Industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column Contract_Type
+		dataType: string
+		lineageTag: 48a0a517-2d6b-40c7-b44f-f5b6a97558b5
+		summarizeBy: none
+		sourceColumn: Contract_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Client Dim' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("jZPLbtswEEV/hfA6Ley0dZOlo6Rqgbh14yBdJFmMqbHEgh4GfDjw33dGD8O2VCQ7akiK95658/g4ysbjyehstKjAbyBz/kX9IP1xX9GYotFguTAjSrx4PqsvnXPlm3PFEtbIVyJ6gmgc1UdlQy280xiCoZIrvxN4PmN33f1P8sfSu9y711ip21g0BaOTjcmjKPDuL+r4YQUBi+7eZ964Mm6OhVo6m+TJwCX+FpnqGreGX+3J/cKVzCLQH2AZKnNi8Ya2xjvaIMVadk/kVFRg9O4eQ1QsNb1w5Zex6ikxgqnKof/U19YIyy+SRiVQ3+ftojVyC6ugcutWtao3GnHJFWmCMA8tx7f5T8biXzfGDkGeMhkSOpHENPqyCjdqlgtdXtUtmAOlNWg22jx9JHciufmZojffESw3vqEUQ6e6BXuFW/RQ4pB0iU7uEemG0Je7I/l3SPgKK4uq2fyfA4nRrNgCaQ7StYGSXGC+HcAuTveoK3LW1T86NiKJWnAzm0DtD5o6fG3RI0QhOeRi2iRpbdBylNHXuZXh6yVsv9vTIFF7AK0NyQyS20J0PnSJ4zGJh/oHQVy04FmfNXE3PMqSr9hHcNnGeqkNMki1YItMPRylnSneYUDwuhrAcD4+zZyaOzJsg8Ozn7jjAwc4Tiw9/wM=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Client ID" = _t, Client_Name = _t, Industry = _t, Contract_Type = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Client ID", type text}, {"Client_Name", type text}, {"Industry", type text}, {"Contract_Type", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,60 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 189,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 184,
+            "y": 0
+          },
+          "nodeIndex": "Inspector Dim",
+          "nodeLineageTag": "54ab1d7c-ce14-43cd-b482-5c5769920e11",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 568,
+            "y": 37
+          },
+          "nodeIndex": "Inspections",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 266,
+            "y": 267.5
+          },
+          "nodeIndex": "Client Dim",
+          "nodeLineageTag": "09a00835-511c-41c7-8b31-5fc64e024159",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 2
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}
