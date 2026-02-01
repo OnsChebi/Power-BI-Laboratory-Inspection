@@ -1,43 +1,27 @@
 table 'Inspector Dim'
-	lineageTag: 54ab1d7c-ce14-43cd-b482-5c5769920e11
-
-	column Department
-		dataType: string
-		lineageTag: 350a9227-9892-4b29-8670-e45f16444b7a
-		summarizeBy: none
-		sourceColumn: Department
-
-		annotation SummarizationSetBy = Automatic
+	lineageTag: 109ba03d-6228-469e-9c84-4a79845e93f9
 
 	column 'Inspector ID'
 		dataType: string
-		lineageTag: 4b0c3c40-b952-432e-ab74-d09f0967445a
+		lineageTag: 51e1dc8a-3640-4484-b94d-b641af96b2f4
 		summarizeBy: none
 		sourceColumn: Inspector ID
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Client ID'
+	column 'Inspector Name'
 		dataType: string
-		lineageTag: 86241dc6-f5b9-49a1-a862-3785518c5f05
+		lineageTag: 8f50198a-c410-4aff-9f5b-7db480fb3ed6
 		summarizeBy: none
-		sourceColumn: Client ID
+		sourceColumn: Inspector Name
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Certification Level'
 		dataType: string
-		lineageTag: 35779c8e-2900-4da4-a46c-5796b4bb18c6
+		lineageTag: ab242789-6ed6-435a-9fa4-b24d131efe68
 		summarizeBy: none
 		sourceColumn: Certification Level
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Inspector Name'
-		dataType: string
-		lineageTag: 6cde639d-1eab-4494-aff8-c07cd88ebf1c
-		summarizeBy: none
-		sourceColumn: Inspector Name
 
 		annotation SummarizationSetBy = Automatic
 
@@ -45,23 +29,24 @@ table 'Inspector Dim'
 		mode: import
 		source =
 				let
-				    Source = Inspections,
-				    #"Removed Columns" = Table.RemoveColumns(Source,{"Laboratory Name", "City", "State", "Zip", "Country/Area", "Inspection ID", "Completion Date", "Compliance Status", "Test Category", "Scheduled Date", " Inspection Duration", "On Time", "Priority Level"}),
-				    #"Removed Duplicates" = Table.Distinct(#"Removed Columns"),
-				    #"Sorted Rows" = Table.Sort(#"Removed Duplicates",{{"Inspector ID", Order.Ascending}}),
-				    #"Added Custom" = Table.AddColumn(#"Sorted Rows", "Inspector Name", each "Inspector"&[Inspector ID]),
-				    #"Added Conditional Column" = Table.AddColumn(#"Added Custom", "Certification Level", each if [Inspector ID] = "001" then "Level 1" else if [Inspector ID] = "013" then "Level 1" else if [Inspector ID] = "007" then "Level 1" else if [Inspector ID] = "012" then "Level 2" else if [Inspector ID] = "014" then "Level 2" else if [Inspector ID] = "005" then "Level 1" else if [Inspector ID] = "009" then "Level 2" else if [Inspector ID] = "008" then "Level 2" else "Level 3"),
-				    #"Sorted Rows1" = Table.Sort(#"Added Conditional Column",{{"Department", Order.Ascending}}),
-				    #"Merged Queries" = Table.NestedJoin(#"Sorted Rows1", {"Inspector ID"}, Table, {"Inspector ID"}, "Table", JoinKind.LeftOuter),
-				    #"Expanded Table" = Table.ExpandTableColumn(#"Merged Queries", "Table", {"Inspector Name"}, {"Table.Inspector Name"}),
-				    #"Removed Columns1" = Table.RemoveColumns(#"Expanded Table",{"Inspector Name"}),
-				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns1",{{"Table.Inspector Name", "Inspector Name"}}),
-				    #"Duplicated Column" = Table.DuplicateColumn(#"Renamed Columns", "Inspector Name", "Inspector Name - Copy"),
-				    #"Removed Columns2" = Table.RemoveColumns(#"Duplicated Column",{"Inspector Name"}),
-				    #"Renamed Columns1" = Table.RenameColumns(#"Removed Columns2",{{"Inspector Name - Copy", "Inspector Name"}}),
-				    #"Removed Duplicates1" = Table.Distinct(#"Renamed Columns1", {"Department", "Inspector ID"})
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("PdBPa8JAEAXwrzLkLJLU/j1arS3RgJhCD5LD1Izu4G4GZhOFfvqm7Wyv8+MNj7ffZ3leZJNsqVOoUBlhJ63yaaCvrJn86I1piYEiLBx1BrMRtirHKdSo6KAU10VJemuxnXyS9rDmYHBnsOGI8IHdye73dl/ihVuoA/fO5MFkhT0HhLkL1Bo9Gr07CRjhWeWaCjwZvXjqELbUq1zwz4rcbIHqJULN/p/SGPNuTK3lij6e2SxNUfHBIXnYEJnMTGo5jhO+oh44PUxD/NaGN4wRrWKRpigHP6aqwXvSrGm+AQ==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Inspector ID" = _t, #"Inspector Name" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Inspector ID", Int64.Type}, {"Inspector Name", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Inspector ID", "Inspecto_ ID"}}),
+				    #"Added Custom" = Table.AddColumn(#"Renamed Columns", "Inspector ID", each Text.PadStart(Text.From([Inspecto_ ID]),3,"0")),
+				    #"Removed Columns" = Table.AddColumn(#"Added Custom", "Certification Level", each if [Inspector ID] = "001" then "Level 1" else if [Inspector ID] = "013" then "Level 1" else if [Inspector ID] = "007" then "Level 1" else if [Inspector ID] = "012" then "Level 2" else if [Inspector ID] = "014" then "Level 2" else if [Inspector ID] = "005" then "Level 1" else if [Inspector ID] = "009" then "Level 2" else if [Inspector ID] = "008" then "Level 2" else "Level 3"),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Removed Columns",{"Inspecto_ ID"}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Removed Columns1",{"Inspector ID", "Inspector Name", "Certification Level"}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Reordered Columns","Prof. Sarah Johnson","Prof.phoebe Buffay",Replacer.ReplaceText,{"Inspector Name"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","Dr. David Smith","Dr.Ross Geller",Replacer.ReplaceText,{"Inspector Name"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","Dr. Sofia Garcia","Dr. Rachel Green",Replacer.ReplaceText,{"Inspector Name"}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2","Prof.phoebe Buffay","Prof. phoebe Buffay",Replacer.ReplaceText,{"Inspector Name"}),
+				    #"Replaced Value4" = Table.ReplaceValue(#"Replaced Value3","Dr.Ross Geller","Dr. Ross Geller",Replacer.ReplaceText,{"Inspector Name"}),
+				    #"Replaced Value5" = Table.ReplaceValue(#"Replaced Value4","Dr. Anna Kowalski","Dr. Drake Ramory",Replacer.ReplaceText,{"Inspector Name"}),
+				    #"Replaced Value6" = Table.ReplaceValue(#"Replaced Value5","Dr. Thomas Brown","Dr. Chandler Bing",Replacer.ReplaceText,{"Inspector Name"}),
+				    #"Replaced Value7" = Table.ReplaceValue(#"Replaced Value6","Dr. Lisa Wang","Dr. Monica Geller",Replacer.ReplaceText,{"Inspector Name"}),
+				    #"Replaced Value8" = Table.ReplaceValue(#"Replaced Value7","Dr. Elena Petrova","Dr. Catherina Petrova",Replacer.ReplaceText,{"Inspector Name"})
 				in
-				    #"Removed Duplicates1"
+				    #"Replaced Value8"
 
 	annotation PBI_NavigationStepName = Navigation
 

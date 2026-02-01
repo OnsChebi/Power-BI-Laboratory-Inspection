@@ -4,29 +4,17 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 189,
+        "x": 0,
         "y": 0
       },
       "nodes": [
         {
           "location": {
-            "x": 184,
-            "y": 0
-          },
-          "nodeIndex": "Inspector Dim",
-          "nodeLineageTag": "54ab1d7c-ce14-43cd-b482-5c5769920e11",
-          "size": {
-            "height": 200,
-            "width": 234
-          },
-          "zIndex": 1
-        },
-        {
-          "location": {
-            "x": 568,
-            "y": 37
+            "x": 315.59915030379534,
+            "y": 266.89106626569014
           },
           "nodeIndex": "Inspections",
+          "nodeLineageTag": "459419d7-a972-4466-87dd-f01881b5d001",
           "size": {
             "height": 300,
             "width": 234
@@ -35,20 +23,46 @@
         },
         {
           "location": {
-            "x": 266,
-            "y": 267.5
+            "x": 0,
+            "y": 0
           },
           "nodeIndex": "Client Dim",
           "nodeLineageTag": "09a00835-511c-41c7-8b31-5fc64e024159",
           "size": {
-            "height": 176,
+            "height": 182.42209153330231,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 257.234204698138,
+            "y": 0
+          },
+          "nodeIndex": "Calendar",
+          "nodeLineageTag": "646f2b7e-ccbb-4c6b-a7bb-8b04ce26d9dd",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 521.42817574166781,
+            "y": 1.2413132090912029
+          },
+          "nodeIndex": "Inspector Dim",
+          "nodeLineageTag": "109ba03d-6228-469e-9c84-4a79845e93f9",
+          "size": {
+            "height": 152,
             "width": 234
           },
           "zIndex": 2
         }
       ],
       "name": "All tables",
-      "zoomValue": 100,
+      "zoomValue": 70.685547470264041,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

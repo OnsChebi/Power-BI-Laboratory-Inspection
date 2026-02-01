@@ -1,0 +1,54 @@
+table Calendar
+	lineageTag: 646f2b7e-ccbb-4c6b-a7bb-8b04ce26d9dd
+
+	column Date
+		formatString: General Date
+		lineageTag: 01e88887-4314-45dc-8583-0e0c71a2b089
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: 36e95901-3f74-4484-9285-e122a8e49e1d
+			defaultHierarchy: LocalDateTable_fa09e918-f75d-4f68-9405-d26670e8bc58.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year = YEAR('Calendar'[Date])
+		formatString: 0
+		lineageTag: d66a44ec-0b0d-4d53-be29-ef8158f7b806
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month = FORMAT('Calendar'[Date],"MMM")
+		lineageTag: 6d51ff09-844d-40b9-af04-958bd4d2592e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter = "Q"& QUARTER('Calendar'[Date])
+		lineageTag: df89ee7b-37ac-4fa1-b636-48bf154137c4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthYear = FORMAT('Calendar'[Date],"MMM YYYY")
+		lineageTag: da698929-af68-4e42-a8b7-292fc980c151
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekDay = FORMAT('Calendar'[Date],"dddd")
+		lineageTag: a1b0122b-129c-4f7d-a616-30d746042aac
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendar = calculated
+		mode: import
+		source = CALENDAR(MIN(Inspections[Scheduled Date]),MAX(Inspections[Completion Date]))
+
+	annotation PBI_Id = 84921d6034b7494abf9be1b6288c07f6
+

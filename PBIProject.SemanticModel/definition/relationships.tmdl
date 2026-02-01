@@ -1,8 +1,3 @@
-relationship 68cc4cfb-d64f-44d5-b173-32a1e05f3a91
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Inspections.'Completion Date'
-	toColumn: LocalDateTable_be6c0471-cf1d-466b-a99f-63d4c80c1b47.Date
-
 relationship 13aaa4f1-0e3d-4c53-89d9-ba3c9b71cbd3
 	joinOnDateBehavior: datePartOnly
 	fromColumn: Inspections.'Scheduled Date'
@@ -12,7 +7,16 @@ relationship AutoDetected_ac33785d-d6c3-425d-8244-0f43e8405481
 	fromColumn: Inspections.'Client ID'
 	toColumn: 'Client Dim'.'Client ID'
 
-relationship AutoDetected_ffa813cb-de79-4f9e-b46a-990a9e664032
-	fromColumn: 'Inspector Dim'.'Client ID'
-	toColumn: 'Client Dim'.'Client ID'
+relationship 36e95901-3f74-4484-9285-e122a8e49e1d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendar.Date
+	toColumn: LocalDateTable_fa09e918-f75d-4f68-9405-d26670e8bc58.Date
+
+relationship AutoDetected_d8ddbf12-0375-4d81-a173-b396438bad98
+	fromColumn: Inspections.'Inspector ID'
+	toColumn: 'Inspector Dim'.'Inspector ID'
+
+relationship 74c65a59-32cb-34a5-6c47-671b87a77ae3
+	fromColumn: Inspections.'Completion Date'
+	toColumn: Calendar.Date
 

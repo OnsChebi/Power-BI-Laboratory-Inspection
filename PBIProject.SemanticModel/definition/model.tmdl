@@ -8,16 +8,17 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["Table","Inspections","Inspector Dim","Client Dim"]
+annotation PBI_QueryOrder = ["Inspector Dim","Inspections","Client Dim"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
 ref table Inspections
 ref table DateTableTemplate_94d967c2-9c38-4102-ae1f-c563efd55d28
-ref table LocalDateTable_be6c0471-cf1d-466b-a99f-63d4c80c1b47
 ref table LocalDateTable_cdda724d-cdac-4df7-b5ad-b83d085ad5d9
-ref table 'Inspector Dim'
 ref table 'Client Dim'
+ref table Calendar
+ref table LocalDateTable_fa09e918-f75d-4f68-9405-d26670e8bc58
+ref table 'Inspector Dim'
 
 ref cultureInfo en-US
 
