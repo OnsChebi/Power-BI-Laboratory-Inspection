@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "26bd635de63acc1cdd08",
+  "position": {
+    "x": 12,
+    "y": 15,
+    "z": 0,
+    "height": 49,
+    "width": 143,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Ons Chebbi",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Cambria",
+                      "fontSize": "18pt",
+                      "color": "#12239e"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

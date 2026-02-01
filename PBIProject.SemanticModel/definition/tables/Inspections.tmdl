@@ -24,7 +24,15 @@ table Inspections
 		formatString: 0
 		lineageTag: 911c7737-f641-48f5-a264-e68db382ddab
 
-	measure 'MoM Growth' = VAR CurrentMonth =[Total Inspections] VAR PrevMonth=[Inspection Last Month] RETURN DIVIDE(CurrentMonth-PrevMonth , PrevMonth)
+	measure 'MoM Growth' =
+			
+			VAR CurrentMonth = [Total Inspections]
+			VAR PrevMonth = CALCULATE([Total Inspections], PREVIOUSMONTH('Calendar'[Date]))
+			RETURN
+			IF(
+			    PrevMonth > 0,
+			    DIVIDE(CurrentMonth - PrevMonth, PrevMonth)
+			)
 		lineageTag: 9fbeda37-ae67-4ab2-9503-8f9dd0dcefd3
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
