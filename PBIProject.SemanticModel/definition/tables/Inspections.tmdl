@@ -20,26 +20,38 @@ table Inspections
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Inspection Last Month' = CALCULATE([Total Inspections],PREVIOUSMONTH('Calendar'[Date]))
-		formatString: 0
-		lineageTag: 911c7737-f641-48f5-a264-e68db382ddab
-
 	measure 'MoM Growth' =
 			
-			VAR CurrentMonth = [Total Inspections]
-			VAR PrevMonth = CALCULATE([Total Inspections], PREVIOUSMONTH('Calendar'[Date]))
+			VAR LatestMonth=MAX(Inspections[YearMonth])
+			VAR PrevMonth=LatestMonth-1
+			VAR CurrentCount=CALCULATE([Total Inspections],Inspections[YearMonth]=LatestMonth)
+			VAR PrevCount=CALCULATE([Total Inspections],Inspections[YearMonth]=PrevMonth)
 			RETURN
-			IF(
-			    PrevMonth > 0,
-			    DIVIDE(CurrentMonth - PrevMonth, PrevMonth)
-			)
+			IF(NOT ISBLANK(PrevCount) && PrevCount>0,
+			DIVIDE(CurrentCount-PrevCount,PrevCount),BLANK())
 		lineageTag: 9fbeda37-ae67-4ab2-9503-8f9dd0dcefd3
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Inpection MTD' = TOTALMTD([Total Inspections],'Calendar'[Date])
+	measure 'Inspection MTD' = TOTALMTD([Total Inspections],'Calendar'[Date])
 		formatString: 0
 		lineageTag: d36f2a5d-2657-4081-a246-32edd4f405d1
+
+	measure LastMothCount = ```
+			
+			    CALCULATE([Total Inspections],Inspections[YearMonth]=MAX(Inspections[YearMonth]))
+			```
+		formatString: 0
+		lineageTag: 1ea1383a-2407-46a1-8199-01ea4fa85bc6
+
+	measure PreviousMonthCount =
+			
+			VAR LastMonth=Max(Inspections[YearMonth])
+			VAR PrevMonth=LastMonth-1
+			RETURN
+			CALCULATE([Total Inspections],Inspections[YearMonth]=PrevMonth)
+		formatString: 0
+		lineageTag: cc3eb994-4e63-4254-b085-2ce7d52012e9
 
 	column 'Laboratory Name'
 		dataType: string
@@ -183,6 +195,15 @@ table Inspections
 		lineageTag: e5f6ce12-4bf3-4bb7-9a05-35ab468b9e1e
 		summarizeBy: none
 		sourceColumn: Client ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth =
+			
+			YEAR(Inspections[Completion Date]) * 100 + MONTH(Inspections[Completion Date])
+		formatString: 0
+		lineageTag: 9746173c-d622-4cdc-a05e-084786345ed5
+		summarizeBy: sum
 
 		annotation SummarizationSetBy = Automatic
 

@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "74896518d5c1c63c8f88",
   "position": {
-    "x": 176,
+    "x": 120,
     "y": 0,
-    "z": 1002,
-    "height": 96,
+    "z": 2000,
+    "height": 80,
     "width": 176,
-    "tabOrder": 1
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "card",
@@ -23,11 +23,11 @@
                       "Entity": "Inspections"
                     }
                   },
-                  "Property": "Inpection MTD"
+                  "Property": "Inspection MTD"
                 }
               },
               "queryRef": "Inspections.Inpection MTD",
-              "nativeQueryRef": "Inpection MTD"
+              "nativeQueryRef": "Inspection MTD"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "Inspections"
                   }
                 },
-                "Property": "Inpection MTD"
+                "Property": "Inspection MTD"
               }
             },
             "direction": "Descending"
@@ -79,5 +79,6 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  }
+  },
+  "parentGroupName": "25b312094f5ca1f8b2b5"
 }

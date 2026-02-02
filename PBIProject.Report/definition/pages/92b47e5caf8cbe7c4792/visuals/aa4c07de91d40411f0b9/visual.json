@@ -1,0 +1,58 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "aa4c07de91d40411f0b9",
+  "position": {
+    "x": 0,
+    "y": 384,
+    "z": 8000,
+    "height": 336,
+    "width": 312,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "map",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Inspections"
+                    }
+                  },
+                  "Property": "State"
+                }
+              },
+              "queryRef": "Inspections.State",
+              "nativeQueryRef": "State",
+              "active": true
+            }
+          ]
+        },
+        "Size": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Inspections"
+                    }
+                  },
+                  "Property": "Total Inspections"
+                }
+              },
+              "queryRef": "Inspections.Total Inspections",
+              "nativeQueryRef": "Total Inspections"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "25b312094f5ca1f8b2b5"
+}

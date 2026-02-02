@@ -1,0 +1,97 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "7121d900c84d8c3a1272",
+  "position": {
+    "x": 432,
+    "y": 416,
+    "z": 8005,
+    "height": 288,
+    "width": 592,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Inspections"
+                    }
+                  },
+                  "Property": "Laboratory Name"
+                }
+              },
+              "queryRef": "Inspections.Laboratory Name",
+              "nativeQueryRef": "Laboratory Name"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Inspections"
+                    }
+                  },
+                  "Property": "Total Inspections"
+                }
+              },
+              "queryRef": "Inspections.Total Inspections",
+              "nativeQueryRef": "Total Inspections"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Inspections"
+                    }
+                  },
+                  "Property": "On-Time Rate"
+                }
+              },
+              "queryRef": "Inspections.On-Time Rate",
+              "nativeQueryRef": "On-Time Rate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Inspections"
+                    }
+                  },
+                  "Property": "Compliance Rate"
+                }
+              },
+              "queryRef": "Inspections.Compliance Rate",
+              "nativeQueryRef": "Compliance Rate"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Inspections"
+                  }
+                },
+                "Property": "Total Inspections"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

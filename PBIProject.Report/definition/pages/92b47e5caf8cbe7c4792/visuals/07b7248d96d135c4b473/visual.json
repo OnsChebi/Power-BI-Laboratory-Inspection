@@ -2,11 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "07b7248d96d135c4b473",
   "position": {
-    "x": 752,
+    "x": 696.00000000000011,
     "y": 0,
-    "z": 1004,
-    "height": 96.000000000000014,
-    "width": 176
+    "z": 4000,
+    "height": 80,
+    "width": 176,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "card",
@@ -25,8 +26,9 @@
                   "Property": "MoM Growth"
                 }
               },
-              "queryRef": "Inspections.Test Count",
-              "nativeQueryRef": "MoM Growth"
+              "queryRef": "Inspections.MoM Growth",
+              "nativeQueryRef": "MoM Growth",
+              "format": "0.00%;-0.00%;0.00%"
             }
           ]
         }
@@ -49,6 +51,128 @@
         ],
         "isDefaultSort": true
       }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "Inspections"
+                                        }
+                                      },
+                                      "Property": "MoM Growth"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "-9999D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "Inspections"
+                                        }
+                                      },
+                                      "Property": "MoM Growth"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#D92D2D'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "Inspections"
+                                        }
+                                      },
+                                      "Property": "MoM Growth"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.001D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "Inspections"
+                                        }
+                                      },
+                                      "Property": "MoM Growth"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "1D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#00731F'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "background": [
@@ -78,5 +202,6 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  }
+  },
+  "parentGroupName": "25b312094f5ca1f8b2b5"
 }

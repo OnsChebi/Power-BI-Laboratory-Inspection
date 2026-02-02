@@ -1,19 +1,38 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "2a4edd43588ecee85318",
+  "name": "4dd528b79b6d187a53f5",
   "position": {
-    "x": 312.00000000000006,
-    "y": 0,
-    "z": 1000,
-    "height": 80,
-    "width": 176,
-    "tabOrder": 3000
+    "x": 632,
+    "y": 96.000000000000014,
+    "z": 7000,
+    "height": 288,
+    "width": 320,
+    "tabOrder": 7000
   },
   "visual": {
-    "visualType": "card",
+    "visualType": "pieChart",
     "query": {
       "queryState": {
-        "Values": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Inspections"
+                    }
+                  },
+                  "Property": "Compliance Status"
+                }
+              },
+              "queryRef": "Inspections.Compliance Status",
+              "nativeQueryRef": "Compliance Status",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
           "projections": [
             {
               "field": {
@@ -23,12 +42,11 @@
                       "Entity": "Inspections"
                     }
                   },
-                  "Property": "On-Time Rate"
+                  "Property": "Total Inspections"
                 }
               },
-              "queryRef": "Inspections.On-Time Rate",
-              "nativeQueryRef": "On-Time Rate",
-              "format": "0.00%;-0.00%;0.00%"
+              "queryRef": "Inspections.Total Inspections",
+              "nativeQueryRef": "Total Inspections"
             }
           ]
         }
@@ -43,7 +61,7 @@
                     "Entity": "Inspections"
                   }
                 },
-                "Property": "On-Time Rate"
+                "Property": "Total Inspections"
               }
             },
             "direction": "Descending"
@@ -53,25 +71,13 @@
       }
     },
     "visualContainerObjects": {
-      "background": [
+      "title": [
         {
           "properties": {
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.1
-                    }
-                  }
-                }
-              }
-            },
-            "transparency": {
+            "text": {
               "expr": {
                 "Literal": {
-                  "Value": "40D"
+                  "Value": "'Inspection Results Distribution'"
                 }
               }
             }
