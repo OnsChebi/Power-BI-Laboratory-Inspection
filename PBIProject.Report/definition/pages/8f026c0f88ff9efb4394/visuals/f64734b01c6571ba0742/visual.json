@@ -4,7 +4,7 @@
   "position": {
     "x": 64,
     "y": 80,
-    "z": 6000,
+    "z": 5000,
     "height": 96,
     "width": 320,
     "tabOrder": 5000
@@ -56,12 +56,56 @@
     "objects": {
       "general": [
         {
-          "properties": {}
+          "properties": {
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "c",
+                    "Entity": "Calendar",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Comparison": {
+                        "ComparisonKind": 2,
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "c"
+                              }
+                            },
+                            "Property": "Date"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "datetime'2017-09-22T00:00:00'"
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
         }
       ],
       "data": [
         {
           "properties": {
+            "startDate": {
+              "expr": {
+                "Literal": {
+                  "Value": "datetime'2017-09-22T00:00:00'"
+                }
+              }
+            },
             "mode": {
               "expr": {
                 "Literal": {

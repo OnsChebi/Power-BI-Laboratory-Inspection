@@ -9,6 +9,15 @@
         "page": "2.3.0"
       },
       "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "Custom2576154745741196.json",
+      "reportVersionAtImport": {
+        "visual": "2.5.0",
+        "report": "3.1.0",
+        "page": "2.3.0"
+      },
+      "type": "RegisteredResources"
     }
   },
   "objects": {
@@ -57,6 +66,17 @@
           "name": "usa.states.topo",
           "path": "Shapemaps/usa.states.topo.json",
           "type": "ShapeMap"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Custom2576154745741196.json",
+          "path": "Custom2576154745741196.json",
+          "type": "CustomTheme"
         }
       ]
     }

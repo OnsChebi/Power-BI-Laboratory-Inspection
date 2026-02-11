@@ -5,6 +5,45 @@
   "displayOption": "ActualSize",
   "height": 720,
   "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "dd330a685839ff57c4bf",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Inspector Dim"
+              }
+            },
+            "Property": "Inspector Name"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "aa2c5b424534dacad4c6",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "f5ab30c7f4a90eeea169",
+        "boundFilter": "dd330a685839ff57c4bf",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Inspector Dim"
+              }
+            },
+            "Property": "Inspector Name"
+          }
+        }
+      }
+    ]
+  },
   "objects": {
     "outspacePane": [
       {

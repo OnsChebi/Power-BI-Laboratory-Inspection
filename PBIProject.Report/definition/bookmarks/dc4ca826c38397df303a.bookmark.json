@@ -1,0 +1,477 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.0.0/schema.json",
+  "displayName": "Default View",
+  "name": "dc4ca826c38397df303a",
+  "options": {
+    "targetVisualNames": [
+      "aa4c07de91d40411f0b9"
+    ]
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "92b47e5caf8cbe7c4792",
+    "sections": {
+      "92b47e5caf8cbe7c4792": {
+        "visualContainers": {
+          "07b7248d96d135c4b473": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d8e448baf3a573dd5da7",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "MoM Growth"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "MoM Growth"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "2a4edd43588ecee85318": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "9a90291c8fa3baa4d5b2",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "On-Time Rate"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "On-Time Rate"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "4dd528b79b6d187a53f5": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "e97c65e34a12657af7a1",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Compliance Status"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4175dd37b5055b0880a9",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Total Inspections"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pieChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Total Inspections"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Compliance Status"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "74896518d5c1c63c8f88": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "35483dc7c19be760f76e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Inspection MTD"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Inspection MTD"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "9775ed39c13bccbb4acb": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "36c457884a765c490682",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Department"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "72be7c37ae2f7162bf8f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Total Inspections"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "columnChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Total Inspections"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Department"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "aa4c07de91d40411f0b9": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "8afb31c4f25ff4c530ca",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "State"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3545c1d30e3996dc07a3",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Total Inspections"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "shapeMap",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Total Inspections"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "eb1c1d2be3c2b9858685": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "8a5e47c790ffe02a28d6",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendar"
+                        }
+                      },
+                      "Property": "MonthYear"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f160f0e17f2f5cab47e4",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Total Inspections"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendar"
+                        }
+                      },
+                      "Property": "MonthYear"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendar"
+                        }
+                      },
+                      "Property": "MonthYear"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "fb506e177e205d4561f0": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ad2c583a092706556126",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Compliance Rate"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Compliance Rate"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "26bd635de63acc1cdd08": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "74a787d0dc8b5c835f46": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "0abead154617a0c41b99": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,530 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.0.0/schema.json",
+  "displayName": "performance last 5 years",
+  "name": "5ade1b553ded5c0eab98",
+  "options": {
+    "targetVisualNames": [
+      "f001f18dba7a9fc1d50e"
+    ]
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "8f026c0f88ff9efb4394",
+    "sections": {
+      "8f026c0f88ff9efb4394": {
+        "filters": {
+          "byExpr": [
+            {
+              "name": "dd330a685839ff57c4bf",
+              "type": "Categorical",
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Inspector Dim"
+                    }
+                  },
+                  "Property": "Inspector Name"
+                }
+              },
+              "howCreated": 5
+            }
+          ]
+        },
+        "visualContainers": {
+          "2412e8e69aa67091fca5": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "3965726d4aa0a193f426": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "7121d900c84d8c3a1272": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "41bb0041d3401616d424",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Laboratory Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f5653ebe4da83ad13e65",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Total Inspections"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "313bcd37563f2f6986c6",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "On-Time Rate"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "48d06f6843a1d0f4a5be",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Compliance Rate"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Laboratory Name"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "e029988b1085439c7fd0": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "f001f18dba7a9fc1d50e": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "4fc3c7a57a5da77b4073",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendar"
+                        }
+                      },
+                      "Property": "Month"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "60ac5b1f325b49fb1994",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspector Dim"
+                        }
+                      },
+                      "Property": "Inspector Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1b50b8de77e962bc5fed",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Total Inspections"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "activeProjections": {
+                "Columns": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendar"
+                        }
+                      },
+                      "Property": "Month"
+                    }
+                  }
+                ],
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspector Dim"
+                        }
+                      },
+                      "Property": "Inspector Name"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "f64734b01c6571ba0742": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d4306239e011e82d85ad",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendar"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "c",
+                                "Entity": "Calendar",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "Comparison": {
+                                    "ComparisonKind": 2,
+                                    "Left": {
+                                      "Column": {
+                                        "Expression": {
+                                          "SourceRef": {
+                                            "Source": "c"
+                                          }
+                                        },
+                                        "Property": "Date"
+                                      }
+                                    },
+                                    "Right": {
+                                      "Literal": {
+                                        "Value": "datetime'2017-09-22T00:00:00'"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "startDate": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "datetime'2017-09-22T00:00:00'"
+                            }
+                          }
+                        },
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Between'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendar"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendar"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "b9b3d2cda11d2ba347f7": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "8cd30cf552a13aed03a2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Department"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Department"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "7cc976c16e257b469059": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "29103087da7b6e7813b1",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Priority Level"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Basic'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Priority Level"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "c6e8deca2965fe10f858": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d2f9561d6f39f6e6bbd2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Test Category"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Basic'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Inspections"
+                        }
+                      },
+                      "Property": "Test Category"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "f324549beac030623e6b": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

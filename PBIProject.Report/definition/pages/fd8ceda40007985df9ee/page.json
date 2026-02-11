@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "fd8ceda40007985df9ee",
+  "displayName": "Inspector Details",
+  "displayOption": "ActualSize",
+  "height": 720,
+  "width": 1280,
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "182L"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

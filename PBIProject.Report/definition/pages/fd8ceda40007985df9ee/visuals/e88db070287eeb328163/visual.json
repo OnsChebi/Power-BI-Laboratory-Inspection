@@ -1,119 +1,141 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "7cc976c16e257b469059",
+  "name": "e88db070287eeb328163",
   "position": {
-    "x": 64,
-    "y": 304,
-    "z": 7000,
-    "height": 160,
+    "x": 48,
+    "y": 208,
+    "z": 2000,
+    "height": 336,
     "width": 320,
-    "tabOrder": 7000
+    "tabOrder": 2000
   },
   "visual": {
-    "visualType": "slicer",
+    "visualType": "cardVisual",
     "query": {
       "queryState": {
-        "Values": {
+        "Rows": {
           "projections": [
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Inspections"
+                      "Entity": "Inspector Dim"
                     }
                   },
-                  "Property": "Priority Level"
+                  "Property": "Inspector Name"
                 }
               },
-              "queryRef": "Inspections.Priority Level",
-              "nativeQueryRef": "Priority Level",
-              "active": true
+              "queryRef": "Inspector Dim.Inspector Name",
+              "nativeQueryRef": "Inspector Name"
             }
           ]
         }
       }
     },
     "objects": {
-      "data": [
+      "referenceLabelLayout": [
         {
           "properties": {
-            "mode": {
+            "position": {
               "expr": {
                 "Literal": {
-                  "Value": "'Basic'"
+                  "Value": "'right'"
                 }
               }
             }
+          },
+          "selector": {
+            "id": "default"
           }
         }
       ],
-      "general": [
+      "smallMultiplesLayout": [
         {
           "properties": {
+            "style": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Table'"
+                }
+              }
+            },
             "orientation": {
               "expr": {
                 "Literal": {
                   "Value": "1D"
                 }
               }
-            }
-          }
-        }
-      ],
-      "header": [
-        {
-          "properties": {
-            "textSize": {
+            },
+            "rowCount": {
               "expr": {
                 "Literal": {
-                  "Value": "14D"
+                  "Value": "4L"
                 }
               }
             }
           }
         }
       ],
-      "items": [
+      "layout": [
         {
           "properties": {
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0.2
-                    }
-                  }
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'middle'"
                 }
               }
-            },
-            "bold": {
+            }
+          }
+        }
+      ],
+      "value": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "21D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
               "expr": {
                 "Literal": {
                   "Value": "true"
                 }
               }
             },
-            "textSize": {
+            "text": {
               "expr": {
                 "Literal": {
-                  "Value": "23D"
+                  "Value": "'Inpectors''s Name'"
                 }
               }
             },
-            "fontFamily": {
+            "heading": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                  "Value": "'Heading2'"
                 }
               }
             },
-            "padding": {
+            "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "3D"
+                  "Value": "18D"
                 }
               }
             }

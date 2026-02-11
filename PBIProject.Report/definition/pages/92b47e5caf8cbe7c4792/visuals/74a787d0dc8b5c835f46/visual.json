@@ -126,7 +126,7 @@
             "tileShape": {
               "expr": {
                 "Literal": {
-                  "Value": "'arrowChevron'"
+                  "Value": "'pill'"
                 }
               }
             }
