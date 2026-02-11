@@ -39,6 +39,10 @@
       }
     ]
   },
+  "publicCustomVisuals": [
+    "iconMapProE938B1CED4834168A55864E1F8E7242E",
+    "synopticPanelLiteByOKVIZ9D9A1ACC481B452E9EF8DF049888BAF6"
+  ],
   "resourcePackages": [
     {
       "name": "SharedResources",
@@ -48,6 +52,11 @@
           "name": "CY25SU12",
           "path": "BaseThemes/CY25SU12.json",
           "type": "BaseTheme"
+        },
+        {
+          "name": "usa.states.topo",
+          "path": "Shapemaps/usa.states.topo.json",
+          "type": "ShapeMap"
         }
       ]
     }

@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "2521bae3f8e77f689bc2",
+  "name": "74a787d0dc8b5c835f46",
   "position": {
-    "x": 1104,
+    "x": 1056,
     "y": 16,
-    "z": 8002,
-    "height": 32,
-    "width": 160
+    "z": 1001,
+    "height": 48,
+    "width": 176
   },
   "visual": {
     "visualType": "actionButton",
@@ -41,31 +41,10 @@
         },
         {
           "properties": {
-            "topMargin": {
+            "text": {
               "expr": {
                 "Literal": {
-                  "Value": "5L"
-                }
-              }
-            },
-            "bottomMargin": {
-              "expr": {
-                "Literal": {
-                  "Value": "5L"
-                }
-              }
-            },
-            "leftMargin": {
-              "expr": {
-                "Literal": {
-                  "Value": "5L"
-                }
-              }
-            },
-            "rightMargin": {
-              "expr": {
-                "Literal": {
-                  "Value": "5L"
+                  "Value": "'Detailed Analysis'"
                 }
               }
             },
@@ -74,7 +53,7 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 0,
+                      "ColorId": 1,
                       "Percent": 0
                     }
                   }
@@ -86,10 +65,8 @@
             "id": "default"
           }
         }
-      ]
-    },
-    "visualContainerObjects": {
-      "title": [
+      ],
+      "fill": [
         {
           "properties": {
             "show": {
@@ -98,81 +75,68 @@
                   "Value": "true"
                 }
               }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'View Details'"
-                }
-              }
-            },
-            "background": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#0910CE'"
-                    }
-                  }
-                }
-              }
-            },
-            "fontColor": {
+            }
+          }
+        },
+        {
+          "properties": {
+            "fillColor": {
               "solid": {
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
+                      "ColorId": 2,
+                      "Percent": 0.4
                     }
                   }
                 }
               }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
-                }
-              }
             }
+          },
+          "selector": {
+            "id": "default"
           }
         }
       ],
-      "padding": [
+      "outline": [
         {
           "properties": {
-            "top": {
-              "expr": {
-                "Literal": {
-                  "Value": "5D"
-                }
-              }
-            },
-            "left": {
-              "expr": {
-                "Literal": {
-                  "Value": "5D"
-                }
-              }
-            },
-            "bottom": {
-              "expr": {
-                "Literal": {
-                  "Value": "5D"
-                }
-              }
-            },
-            "right": {
-              "expr": {
-                "Literal": {
-                  "Value": "5D"
+            "lineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0.4
+                    }
+                  }
                 }
               }
             }
+          },
+          "selector": {
+            "id": "default"
           }
         }
       ],
+      "shape": [
+        {
+          "properties": {
+            "tileShape": {
+              "expr": {
+                "Literal": {
+                  "Value": "'arrowChevron'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
       "visualLink": [
         {
           "properties": {
